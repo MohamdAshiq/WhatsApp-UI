@@ -3,12 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Constants/constants.dart';
 
-class TabBarWidget extends StatelessWidget implements PreferredSizeWidget{
+class TabBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const TabBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return TabBar(
+      enableFeedback: false,
       indicatorColor: Constants.whiteColor,
       indicatorSize: TabBarIndicatorSize.tab,
       tabs: List.generate(
@@ -33,8 +34,7 @@ class TabBarWidget extends StatelessWidget implements PreferredSizeWidget{
       ),
     );
   }
-  
+
   @override
- 
   Size get preferredSize => const Size.fromHeight(kTextTabBarHeight);
 }

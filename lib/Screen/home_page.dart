@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Constants/constants.dart';
+import 'package:whatsapp_ui/Widgets/action_buttons.dart';
 import 'package:whatsapp_ui/Widgets/tab_bar_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -26,7 +28,8 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              bottom: const TabBarWidget()
+              actions: const [ActionButtons()],
+              bottom: const TabBarWidget(),
             ),
             SliverList(
               delegate: SliverChildBuilderDelegate(
@@ -39,5 +42,4 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-
 }
