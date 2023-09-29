@@ -17,6 +17,10 @@ class ChatScreen extends StatelessWidget {
           ),
           onTap: () {},
           horizontalTitleGap: 16,
+          trailing: const Text(
+            "3:30 PM",
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
+          ),
           leading: CircleAvatar(
             backgroundColor: Colors.grey[400],
             foregroundColor: Colors.white,
@@ -34,6 +38,7 @@ class ChatScreen extends StatelessWidget {
             "Description ${index + 1}",
             style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
           ),
+                   
         ),
       ),
       floatingActionButton: FloatingActionButtonWidget(
