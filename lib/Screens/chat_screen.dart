@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_ui/Widgets/floating_action_button_widget.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -10,7 +11,6 @@ class ChatScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         itemCount: 15,
         itemBuilder: (context, index) => ListTile(
-        
           contentPadding: const EdgeInsets.symmetric(
             vertical: 3,
             horizontal: 5,
@@ -35,6 +35,10 @@ class ChatScreen extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButtonWidget(
+        onPressed: () {},
+        icon: Icons.message,
       ),
     );
   }
