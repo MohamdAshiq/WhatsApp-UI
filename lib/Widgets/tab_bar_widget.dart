@@ -13,9 +13,7 @@ class TabBarWidget extends StatelessWidget implements PreferredSizeWidget {
       indicatorSize: TabBarIndicatorSize.tab,
       tabs: List.generate(
         Constants.tabs.length,
-        (index) => _tab(
-          Constants.tabs[index],
-        ),
+        (index) => _tab(Constants.tabs[index]),
       ),
     );
   }
@@ -23,12 +21,14 @@ class TabBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Padding _tab(String title) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
-      child: Text(
-        title,
-        style: TextStyle(
-          color: Constants.whiteColor,
-          fontSize: 14.5.sp,
-          fontWeight: FontWeight.w500,
+      child: SizedBox(
+        child: Text(
+          title,
+          style: TextStyle(
+            color: Constants.whiteColor,
+            fontSize: 14.5.sp,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
     );
