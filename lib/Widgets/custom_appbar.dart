@@ -10,16 +10,17 @@ class CustomAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Constants.whatsAppGreen,
+      backgroundColor: Constants.whatsAppGreen.withOpacity(1),
       foregroundColor: Constants.whiteColor,
       floating: true,
       pinned: true,
       snap: true,
-      expandedHeight: 95.h,
-      title: const Text(
+      expandedHeight: 100.h,
+      title:Text(
         Constants.appname,
         style: TextStyle(
           fontWeight: FontWeight.w500,
+          fontSize: 20.sp
         ),
       ),
       actions: const [ActionButtons()],

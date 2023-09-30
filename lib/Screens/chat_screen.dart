@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Widgets/floating_action_button_widget.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -15,16 +16,16 @@ class ChatScreen extends StatelessWidget {
             vertical: 3,
             horizontal: 5,
           ),
-          onTap: () {},
+         
           horizontalTitleGap: 16,
-          trailing: const Text(
+          trailing: Text(
             "3:30 PM",
-            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12.sp),
           ),
           leading: CircleAvatar(
             backgroundColor: Colors.grey[400],
             foregroundColor: Colors.white,
-            radius: 25,
+            radius: 25.r,
             child: const Icon(
               Icons.person,
               size: 27,
@@ -32,13 +33,12 @@ class ChatScreen extends StatelessWidget {
           ),
           title: Text(
             "Chat ${index + 1}",
-            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15.sp),
           ),
           subtitle: Text(
             "Description ${index + 1}",
-            style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13.sp),
           ),
-                   
         ),
       ),
       floatingActionButton: FloatingActionButtonWidget(

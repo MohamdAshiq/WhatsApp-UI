@@ -12,20 +12,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: Constants.tabs.length,
-      child: const Scaffold(
-        body: CustomScrollView(
-          slivers: <Widget>[
-            CustomAppbar(),
-            SliverFillRemaining(
-              child: TabBarView(
-                children: [
-                  ChatScreen(),
-                  StatusScreen(),
-                  CallsScreen(),
-                ],
-              ),
-            )
-          ],
+      child: Scaffold(
+        body: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) =>
+              [const CustomAppbar()],
+          body: const TabBarView(
+            children: [
+              ChatScreen(),
+              StatusScreen(),
+              CallsScreen(),
+            ],
+          ),
         ),
       ),
     );
