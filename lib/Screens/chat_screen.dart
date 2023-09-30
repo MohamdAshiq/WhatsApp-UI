@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:whatsapp_ui/Screens/each_chat_screen.dart';
 import 'package:whatsapp_ui/Widgets/floating_action_button_widget.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -12,11 +13,16 @@ class ChatScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         itemCount: 15,
         itemBuilder: (context, index) => ListTile(
+          onTap: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => EachChatScreen(
+              chatname: "Chat ${index+1}",
+              icon: Icons.person,
+            ),
+          )),
           contentPadding: const EdgeInsets.symmetric(
             vertical: 3,
             horizontal: 5,
           ),
-         
           horizontalTitleGap: 16,
           trailing: Text(
             "3:30 PM",
