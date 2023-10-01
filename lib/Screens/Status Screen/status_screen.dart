@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_ui/Screens/Status%20Screen/my_status_section.dart';
 import 'package:whatsapp_ui/Screens/Status%20Screen/recent_updates_section.dart';
+import 'package:whatsapp_ui/Screens/Status%20Screen/viewed_updates_section.dart';
 import 'package:whatsapp_ui/Widgets/floating_action_button_widget.dart';
 
 class StatusScreen extends StatelessWidget {
@@ -23,6 +24,7 @@ class StatusScreen extends StatelessWidget {
             children: [
               MyStatusSection(),
               RecentUpdatesSection(),
+              ViewedUpdatesSection(),
             ],
           ),
         ),
