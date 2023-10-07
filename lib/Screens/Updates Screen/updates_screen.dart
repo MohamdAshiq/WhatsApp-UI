@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_ui/Screens/Updates%20Screen/channels_section.dart';
 import 'package:whatsapp_ui/Screens/Updates%20Screen/my_status_section.dart';
 import 'package:whatsapp_ui/Screens/Updates%20Screen/recent_updates_section.dart';
 import 'package:whatsapp_ui/Screens/Updates%20Screen/viewed_updates_section.dart';
@@ -25,6 +26,7 @@ class UpdatesScreen extends StatelessWidget {
               MyStatusSection(),
               RecentUpdatesSection(),
               ViewedUpdatesSection(),
+              ChannelsSection()
             ],
           ),
         ),

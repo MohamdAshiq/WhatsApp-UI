@@ -15,7 +15,7 @@ class MyStatusSection extends StatelessWidget {
           children: [
             Text(
               "Status",
-              style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
             ),
             IconButtonWidget(
               onpressed: () {},
