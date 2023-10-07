@@ -7,5 +7,5 @@ class Constants {
 
   // Tabs
 
-  static const List tabs = ["Chats", "Status", "Calls"];
+  static const List tabs = ["Chats", "Updates", "Calls"];
 }
