@@ -15,7 +15,10 @@ class EachChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MsgController msgController=Provider.of<MsgController>(context,listen: false);
+    final TextEditingController message = TextEditingController();
+    final ScrollController scrollController = ScrollController();
+    final MsgController msgController =
+        Provider.of<MsgController>(context, listen: false);
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
@@ -76,15 +79,24 @@ class EachChatScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                child: const BottomTextFieldWidget(),
+                child: BottomTextFieldWidget(message: message),
               ),
-              CircleAvatar(
-                radius: 25.r,
-                foregroundColor: Colors.white,
-                backgroundColor: Constants.whatsAppGreen.withOpacity(0.9),
-                child: const Icon(
-                  Icons.mic,
-                  size: 23,
+              GestureDetector(
+                onTap: () {
+                  msgController.addmsg(
+                      message.text, true, msgController.chatMsgs.length);
+                  message.clear();
+                  scrollController
+                      .jumpTo(scrollController.position.maxScrollExtent);
+                },
+                child: CircleAvatar(
+                  radius: 25.r,
+                  foregroundColor: Colors.white,
+                  backgroundColor: Constants.whatsAppGreen.withOpacity(0.9),
+                  child: const Icon(
+                    Icons.mic,
+                    size: 23,
+                  ),
                 ),
               ),
             ],
@@ -94,13 +106,19 @@ class EachChatScreen extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: msgController.chatMsgs.length,
-              itemBuilder: (context, index) => ChatBubble(
-                msg:
-                    msgController.chatMsgs.values.elementAt(index).elementAt(0),
-                isme: msgController.chatMsgs.values.elementAt(index).elementAt(1),
+            child: Consumer<MsgController>(
+              builder: (context, value, child) => ListView.builder(
+                shrinkWrap: true,
+                controller: scrollController,
+                itemCount: msgController.chatMsgs.length,
+                itemBuilder: (context, index) => ChatBubble(
+                  msg: msgController.chatMsgs.values
+                      .elementAt(index)
+                      .elementAt(0),
+                  isme: msgController.chatMsgs.values
+                      .elementAt(index)
+                      .elementAt(1),
+                ),
               ),
             ),
           ),

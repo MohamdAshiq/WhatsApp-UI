@@ -6,11 +6,16 @@ import '../Constants/constants.dart';
 class BottomTextFieldWidget extends StatelessWidget {
   const BottomTextFieldWidget({
     super.key,
+    required this.message,
   });
+
+  final TextEditingController message;
 
   @override
   Widget build(BuildContext context) {
     return CupertinoTextField.borderless(
+      controller: message,
+      onChanged: (value) {},
       placeholder: "Message",
       placeholderStyle: const TextStyle(
         fontWeight: FontWeight.w500,
