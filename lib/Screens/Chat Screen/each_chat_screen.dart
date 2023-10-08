@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Constants/constants.dart';
+import 'package:whatsapp_ui/Screens/Chat%20Screen/chat_bubble.dart';
 import 'package:whatsapp_ui/Widgets/bottom_textfield_widget.dart';
 import 'package:whatsapp_ui/Widgets/icon_button_widget.dart';
 
@@ -87,7 +88,24 @@ class EachChatScreen extends StatelessWidget {
           ),
         ),
       ),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: 10,
+              itemBuilder: (context, index) => ChatBubble(
+                msg:
+                    "Hiii...This is message number ${index+1}..What are you doing guys..I am currently learning flutter..",
+                isme: index.isEven ? true : false,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 50,
+          )
+        ],
+      ),
     );
   }
 }
-
