@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:whatsapp_ui/Constants/constants.dart';
+import 'package:whatsapp_ui/Provider/msg_controller.dart';
 import 'package:whatsapp_ui/Screens/Chat%20Screen/chat_bubble.dart';
 import 'package:whatsapp_ui/Widgets/bottom_textfield_widget.dart';
 import 'package:whatsapp_ui/Widgets/icon_button_widget.dart';
@@ -13,6 +15,7 @@ class EachChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final MsgController msgController=Provider.of<MsgController>(context,listen: false);
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
@@ -93,11 +96,11 @@ class EachChatScreen extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               shrinkWrap: true,
-              itemCount: 10,
+              itemCount: msgController.chatMsgs.length,
               itemBuilder: (context, index) => ChatBubble(
                 msg:
-                    "Hiii...This is message number ${index+1}..What are you doing guys..I am currently learning flutter..",
-                isme: index.isEven ? true : false,
+                    msgController.chatMsgs.values.elementAt(index).elementAt(0),
+                isme: msgController.chatMsgs.values.elementAt(index).elementAt(1),
               ),
             ),
           ),
