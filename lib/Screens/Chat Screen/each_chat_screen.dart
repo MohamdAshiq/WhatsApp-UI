@@ -5,6 +5,7 @@ import 'package:whatsapp_ui/Constants/constants.dart';
 import 'package:whatsapp_ui/Provider/msg_controller.dart';
 import 'package:whatsapp_ui/Screens/Chat%20Screen/chat_bubble.dart';
 import 'package:whatsapp_ui/Widgets/bottom_textfield_widget.dart';
+import 'package:whatsapp_ui/Widgets/encryption_msg_widget.dart';
 import 'package:whatsapp_ui/Widgets/icon_button_widget.dart';
 
 class EachChatScreen extends StatelessWidget {
@@ -105,6 +106,7 @@ class EachChatScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
+          const EncryptionMsgWidget(),
           Expanded(
             child: Consumer<MsgController>(
               builder: (context, value, child) => ListView.builder(
