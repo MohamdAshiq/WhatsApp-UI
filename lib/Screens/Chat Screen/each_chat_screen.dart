@@ -104,14 +104,15 @@ class EachChatScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          const EncryptionMsgWidget(),
-          Expanded(
-            child: Consumer<MsgController>(
+      body: SingleChildScrollView(
+        controller: scrollController,
+        child: Column(
+          children: [
+            const EncryptionMsgWidget(),
+            Consumer<MsgController>(
               builder: (context, value, child) => ListView.builder(
                 shrinkWrap: true,
-                controller: scrollController,
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: msgController.chatMsgs.length,
                 itemBuilder: (context, index) => ChatBubble(
                   msg: msgController.chatMsgs.values
@@ -123,11 +124,11 @@ class EachChatScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 50,
-          )
-        ],
+            const SizedBox(
+              height: 60,
+            )
+          ],
+        ),
       ),
     );
   }
