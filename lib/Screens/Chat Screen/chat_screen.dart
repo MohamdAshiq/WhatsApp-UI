@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Screens/Chat%20Screen/each_chat_screen.dart';
+import 'package:whatsapp_ui/Screens/add_contacts_page.dart';
 import 'package:whatsapp_ui/Widgets/floating_action_button_widget.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -15,7 +16,7 @@ class ChatScreen extends StatelessWidget {
         itemBuilder: (context, index) => ListTile(
           onTap: () => Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => EachChatScreen(
-              chatname: "Chat ${index+1}",
+              chatname: "Chat ${index + 1}",
               icon: Icons.person,
             ),
           )),
@@ -48,7 +49,11 @@ class ChatScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButtonWidget(
-        onPressed: () {},
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const AddContactsPage(),
+          ),
+        ),
         icon: Icons.message,
       ),
     );
