@@ -10,12 +10,19 @@ class BottomTextFieldWidget extends StatelessWidget {
   });
 
   final TextEditingController message;
+  static ValueNotifier<bool> ismsgempty = ValueNotifier(true);
 
   @override
   Widget build(BuildContext context) {
     return CupertinoTextField.borderless(
       controller: message,
-      onChanged: (value) {},
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          ismsgempty.value = false;
+        } else {
+          ismsgempty.value = true;
+        }
+      },
       placeholder: "Message",
       placeholderStyle: const TextStyle(
         fontWeight: FontWeight.w500,

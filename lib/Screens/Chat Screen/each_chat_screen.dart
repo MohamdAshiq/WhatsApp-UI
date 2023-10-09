@@ -84,9 +84,12 @@ class EachChatScreen extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  msgController.addmsg(
-                      message.text, true, msgController.chatMsgs.length);
+                  BottomTextFieldWidget.ismsgempty.value
+                      ? null
+                      : msgController.addmsg(
+                          message.text, true, msgController.chatMsgs.length);
                   message.clear();
+                  BottomTextFieldWidget.ismsgempty.value = true;
                   scrollController
                       .jumpTo(scrollController.position.maxScrollExtent);
                 },
@@ -94,9 +97,12 @@ class EachChatScreen extends StatelessWidget {
                   radius: 25.r,
                   foregroundColor: Colors.white,
                   backgroundColor: Constants.whatsAppGreen.withOpacity(0.9),
-                  child: const Icon(
-                    Icons.mic,
-                    size: 23,
+                  child: ValueListenableBuilder(
+                    valueListenable: BottomTextFieldWidget.ismsgempty,
+                    builder: (context, bool value, child) => Icon(
+                      value ? Icons.mic : Icons.send,
+                      size: value ? 23 : 20,
+                    ),
                   ),
                 ),
               ),
