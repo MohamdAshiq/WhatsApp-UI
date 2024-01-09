@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Constants/constants.dart';
 import 'package:whatsapp_ui/Widgets/action_buttons.dart';
 import 'package:whatsapp_ui/Widgets/tab_bar_widget.dart';
@@ -15,13 +14,10 @@ class CustomAppbar extends StatelessWidget {
       floating: true,
       pinned: true,
       snap: true,
-      expandedHeight: 100.h,
-      title:Text(
+      expandedHeight: 100,
+      title: const Text(
         Constants.appname,
-        style: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 20.sp
-        ),
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
       ),
       actions: const [ActionButtons()],
       bottom: const TabBarWidget(),

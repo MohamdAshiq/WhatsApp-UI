@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Screens/Chat%20Screen/each_chat_screen.dart';
 import 'package:whatsapp_ui/Screens/add_contacts_page.dart';
 import 'package:whatsapp_ui/Widgets/floating_action_button_widget.dart';
@@ -25,14 +24,14 @@ class ChatScreen extends StatelessWidget {
             horizontal: 5,
           ),
           horizontalTitleGap: 16,
-          trailing: Text(
+          trailing: const Text(
             "3:30 PM",
-            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12.sp),
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
           ),
           leading: CircleAvatar(
             backgroundColor: Colors.grey[400],
             foregroundColor: Colors.white,
-            radius: 25.r,
+            radius: 25,
             child: const Icon(
               Icons.person,
               size: 27,
@@ -40,11 +39,11 @@ class ChatScreen extends StatelessWidget {
           ),
           title: Text(
             "Chat ${index + 1}",
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15.sp),
+            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
           ),
           subtitle: Text(
             "Description ${index + 1}",
-            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13.sp),
+            style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 13),
           ),
         ),
       ),

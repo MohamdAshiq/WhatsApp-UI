@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ViewedUpdatesSection extends StatelessWidget {
   const ViewedUpdatesSection({super.key});
@@ -15,7 +14,7 @@ class ViewedUpdatesSection extends StatelessWidget {
         title: Text(
           "Viewed Updates",
           style: TextStyle(
-            fontSize: 13.sp,
+            fontSize: 13,
             fontWeight: FontWeight.w500,
             color: Colors.grey[800],
           ),
@@ -31,7 +30,7 @@ class ViewedUpdatesSection extends StatelessWidget {
             leading: CircleAvatar(
               backgroundColor: Colors.grey[400],
               foregroundColor: Colors.white,
-              radius: 25.r,
+              radius: 25,
               child: const Icon(
                 Icons.person,
                 size: 30,
@@ -39,15 +38,15 @@ class ViewedUpdatesSection extends StatelessWidget {
             ),
             title: Text(
               "Status ${index + 1}",
-              style: TextStyle(
-                fontSize: 15.sp,
+              style: const TextStyle(
+                fontSize: 15,
                 fontWeight: FontWeight.w600,
               ),
             ),
             subtitle: Text(
               "${index + 1} minutes ago",
               style: TextStyle(
-                  fontSize: 13.sp,
+                  fontSize: 13,
                   fontWeight: FontWeight.w500,
                   color: Colors.grey[700]),
             ),

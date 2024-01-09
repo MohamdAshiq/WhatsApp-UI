@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RecentCallSection extends StatelessWidget {
   const RecentCallSection({super.key});
@@ -9,8 +8,8 @@ class RecentCallSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
+        const Padding(
+          padding: EdgeInsets.symmetric(
             horizontal: 12,
             vertical: 10,
           ),
@@ -18,7 +17,7 @@ class RecentCallSection extends StatelessWidget {
             "Recent",
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 16.sp,
+              fontSize: 16,
             ),
           ),
         ),
@@ -30,7 +29,7 @@ class RecentCallSection extends StatelessWidget {
               leading: CircleAvatar(
                 backgroundColor: Colors.grey[400],
                 foregroundColor: Colors.white,
-                radius: 25.r,
+                radius: 25,
                 child: const Icon(
                   Icons.person,
                   size: 30,
@@ -39,7 +38,7 @@ class RecentCallSection extends StatelessWidget {
               title: Text(
                 "Chat Call ${index + 1}",
                 style: TextStyle(
-                    fontSize: 14.5.sp,
+                    fontSize: 14.5,
                     fontWeight: FontWeight.w600,
                     color: index.isOdd ? Colors.black : Colors.redAccent),
               ),
@@ -62,7 +61,7 @@ class RecentCallSection extends StatelessWidget {
                   Text(
                     "September ${index + 1}, 7:0$index PM",
                     style: TextStyle(
-                        fontSize: 12.5.sp,
+                        fontSize: 12.5,
                         fontWeight: FontWeight.w500,
                         color: Colors.grey[700]),
                   ),

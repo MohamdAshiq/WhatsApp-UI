@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:provider/provider.dart';
 import 'package:whatsapp_ui/Constants/constants.dart';
 import 'package:whatsapp_ui/Provider/msg_controller.dart';
@@ -37,17 +37,17 @@ class EachChatScreen extends StatelessWidget {
           ),
           title: Text(
             chatname,
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 16.sp,
+            style: const TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 16,
               color: Colors.white,
             ),
           ),
-          subtitle: Text(
+          subtitle: const Text(
             "Group Members Details",
             style: TextStyle(
               fontWeight: FontWeight.w400,
-              fontSize: 11.sp,
+              fontSize: 10,
               color: Colors.white,
             ),
           ),
@@ -58,7 +58,7 @@ class EachChatScreen extends StatelessWidget {
         ],
       ),
       bottomSheet: Container(
-        height: 60.h,
+        height: 60,
         color: Colors.grey[300],
         margin: const EdgeInsets.all(0),
         child: Padding(
@@ -69,19 +69,21 @@ class EachChatScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width * 0.8,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(
-                      30,
+              Flexible(
+                child: Container(
+                  height: 50,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(
+                        30,
+                      ),
                     ),
                   ),
+                  child: BottomTextFieldWidget(message: message),
                 ),
-                child: BottomTextFieldWidget(message: message),
               ),
+              const SizedBox(width: 10),
               GestureDetector(
                 onTap: () {
                   BottomTextFieldWidget.ismsgempty.value
@@ -94,7 +96,7 @@ class EachChatScreen extends StatelessWidget {
                       .jumpTo(scrollController.position.maxScrollExtent);
                 },
                 child: CircleAvatar(
-                  radius: 25.r,
+                  radius: 25,
                   foregroundColor: Colors.white,
                   backgroundColor: Constants.whatsAppGreen.withOpacity(0.9),
                   child: ValueListenableBuilder(

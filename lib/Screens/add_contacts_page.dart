@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Constants/constants.dart';
 import 'package:whatsapp_ui/Widgets/icon_button_widget.dart';
 
@@ -12,19 +11,19 @@ class AddContactsPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Constants.whatsAppGreen.withOpacity(1),
         foregroundColor: Colors.white,
-        title: Column(
+        title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Select Contact",
-              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
-            const SizedBox(
+            SizedBox(
               height: 3,
             ),
             Text(
               "123 Members",
-              style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w500),
             )
           ],
         ),
@@ -68,13 +67,13 @@ class AddContactsPage extends StatelessWidget {
                     ),
                     title: Text(
                       "Contact ${index + 1}",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600, fontSize: 15.sp),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w600, fontSize: 15),
                     ),
                     subtitle: Text(
                       "Description of Contact ${index + 1}",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 12.sp),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 12),
                     ),
                   ),
                 ),
@@ -105,7 +104,7 @@ class ReUsableListTile extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15.sp),
+        style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
       ),
     );
   }

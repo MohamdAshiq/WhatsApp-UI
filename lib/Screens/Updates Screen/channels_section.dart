@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Constants/constants.dart';
 
 import '../../Widgets/icon_button_widget.dart';
@@ -15,10 +14,10 @@ class ChannelsSection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               "Channels",
               style: TextStyle(
-                fontSize: 18.sp,
+                fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -34,14 +33,14 @@ class ChannelsSection extends StatelessWidget {
           child: Text(
             "Stay updated on topics that matters to you.Find channels to follow below",
             style: TextStyle(
-              fontSize: 13.sp,
+              fontSize: 13,
               fontWeight: FontWeight.w500,
               color: Colors.grey[700],
             ),
           ),
         ),
         SizedBox(
-          height: 200.h,
+          height: 200,
           width: double.infinity,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -49,7 +48,7 @@ class ChannelsSection extends StatelessWidget {
             itemBuilder: (context, index) => Container(
               padding: const EdgeInsets.all(10),
               margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-              width: MediaQuery.of(context).size.width / 2.8,
+              width: 155,
               decoration: BoxDecoration(
                 color: Colors.white,
                 border:
@@ -68,7 +67,7 @@ class ChannelsSection extends StatelessWidget {
                       CircleAvatar(
                         backgroundColor: Colors.grey[400],
                         foregroundColor: Colors.white,
-                        radius: 33.r,
+                        radius: 33,
                         child: const Icon(
                           Icons.person,
                           size: 40,
@@ -89,9 +88,9 @@ class ChannelsSection extends StatelessWidget {
                     padding: const EdgeInsets.all(7),
                     child: Text(
                       "Name ${index + 1}",
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 14.sp,
+                        fontSize: 14,
                       ),
                     ),
                   ),
@@ -103,10 +102,11 @@ class ChannelsSection extends StatelessWidget {
                       backgroundColor: const Color.fromARGB(255, 198, 255, 227),
                       foregroundColor: Constants.whatsAppGreen.withOpacity(1),
                     ),
-                    child: const Text(
+                    child:  const Text(
                       "Follow",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
+                        fontSize: 12
                       ),
                     ),
                   )

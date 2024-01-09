@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Constants/constants.dart';
 import 'package:whatsapp_ui/Widgets/icon_button_widget.dart';
 
@@ -13,9 +12,9 @@ class MyStatusSection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               "Status",
-              style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
             IconButtonWidget(
               onpressed: () {},
@@ -32,23 +31,23 @@ class MyStatusSection extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: Colors.grey[400],
                 foregroundColor: Colors.white,
-                radius: 35.r,
+                radius: 35,
                 child: const Icon(
                   Icons.person,
                   size: 40,
                 ),
               ),
-              Positioned(
+              const Positioned(
                 bottom: 3,
                 right: 3,
                 child: CircleAvatar(
                   backgroundColor: Colors.white,
-                  radius: 13.r,
+                  radius: 13,
                   child: CircleAvatar(
-                    radius: 11.r,
+                    radius: 11,
                     foregroundColor: Colors.white,
                     backgroundColor: Constants.whatsAppGreen,
-                    child: const Icon(
+                    child: Icon(
                       Icons.add,
                       size: 17,
                     ),
@@ -57,18 +56,18 @@ class MyStatusSection extends StatelessWidget {
               )
             ],
           ),
-          title: Text(
+          title: const Text(
             "My Status",
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 16.sp,
+              fontSize: 16,
             ),
           ),
-          subtitle: Text(
+          subtitle: const Text(
             "Tap to add status update",
             style: TextStyle(
               fontWeight: FontWeight.w500,
-              fontSize: 13.sp,
+              fontSize: 13,
             ),
           ),
         ),

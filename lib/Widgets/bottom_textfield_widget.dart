@@ -26,7 +26,7 @@ class BottomTextFieldWidget extends StatelessWidget {
       placeholder: "Message",
       placeholderStyle: const TextStyle(
         fontWeight: FontWeight.w500,
-        fontSize: 17,
+        fontSize: 16,
         color: Colors.grey,
       ),
       padding: const EdgeInsets.all(8),

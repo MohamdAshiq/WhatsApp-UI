@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Constants/constants.dart';
 
 class TabBarWidget extends StatelessWidget implements PreferredSizeWidget {
@@ -11,6 +10,7 @@ class TabBarWidget extends StatelessWidget implements PreferredSizeWidget {
       enableFeedback: false,
       indicatorColor: Constants.whiteColor,
       indicatorSize: TabBarIndicatorSize.tab,
+    labelPadding: const EdgeInsets.all(5),
       tabs: List.generate(
         Constants.tabs.length,
         (index) => _tab(Constants.tabs[index]),
@@ -21,14 +21,12 @@ class TabBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Padding _tab(String title) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
-      child: SizedBox(
-        child: Text(
-          title,
-          style: TextStyle(
-            color: Constants.whiteColor,
-            fontSize: 14.5.sp,
-            fontWeight: FontWeight.w500,
-          ),
+      child: Text(
+        title,
+        style: const TextStyle(
+          color: Constants.whiteColor,
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
         ),
       ),
     );

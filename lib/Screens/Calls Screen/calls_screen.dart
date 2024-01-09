@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Constants/constants.dart';
 import 'package:whatsapp_ui/Screens/Calls%20Screen/recent_call_section.dart';
 import 'package:whatsapp_ui/Widgets/floating_action_button_widget.dart';
@@ -22,7 +21,7 @@ class CallsScreen extends StatelessWidget {
             children: [
               ListTile(
                 leading: CircleAvatar(
-                  radius: 25.r,
+                  radius: 25,
                   backgroundColor: Constants.whatsAppGreen.withOpacity(1),
                   foregroundColor: Colors.white,
                   child: const Icon(
@@ -30,18 +29,18 @@ class CallsScreen extends StatelessWidget {
                     size: 22,
                   ),
                 ),
-                title: Text(
+                title: const Text(
                   "Create call link",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 16.sp,
+                    fontSize: 16,
                   ),
                 ),
-                subtitle: Text(
+                subtitle: const Text(
                   "Share a link for your WhatsApp call",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 13.sp,
+                    fontSize: 13,
                   ),
                 ),
               ),

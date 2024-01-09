@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_ui/Constants/constants.dart';
 
 class FloatingActionButtonWidget extends StatelessWidget {
@@ -15,8 +14,8 @@ class FloatingActionButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 60.h,
-      height: 60.h,
+      width: 60,
+      height: 60,
       child: FloatingActionButton(
         onPressed: onPressed,
         backgroundColor: Constants.whatsAppGreen.withOpacity(1),
